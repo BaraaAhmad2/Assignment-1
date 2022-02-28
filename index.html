@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Assignment 1</title>
+</head>
+<body>
+    <h1 text="center">HTTP Requests </h1>
+    
+
+
+
+   
+<form>
+    <table style="margin-left:auto; margin-right:auto;">
+        <tr>
+            <td><label>Tweet Search</label></td>
+            <td><input class="form-control" type="text" name="searchEntry" id="searchEntry" required="true"/></td>
+        </tr>
+    </table>
+    
+    <button class="button" id="tweetbutton" required> Get Tweet</button>
+</form>
+
+
+    <table id="specificTweetTable">
+        <thead>
+            <tr>
+                <th>Text</th>
+                <th>Created At</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    
+
+<hr>
+<form>
+    <table style="margin-left:auto; margin-right:auto;">
+        <tr>
+            <td><label>Tweet Delete</label></td>
+            <td><input class="form-control" type="text" name="deleteEntry" id="deleteEntry" required="true"/></td>
+        </tr>
+    </table>
+    
+    <button id="deleteButton"> delete tweet</button>
+</form>
+
+    <hr>
+    <button id="get-button">Get IDs</button>
+    <table id="table2">
+        <thead>
+            <tr>
+                <th>ID</th>
+                
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <hr>
+    <form>
+    <table id="table3">
+        <thead>
+            <tr>
+                <th>Created At</th>
+                <th>Text</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <button type="submit" id="get-button2" >Get Tweets</button>
+</form>
+<hr>
+ <form id="create-form2">
+        <table style="margin-left:auto; margin-right:auto;">
+            <tr>
+                <td><label>User ID</label></td>
+                <td><input class="form-control" type="text" name="idEntry" id="idEntry" required="true"/></td>
+                <td><label>Text</label></td>
+                <td><input class="form-control" type="text" name="textEntry" id="textEntry" required="true"/></td>
+
+            </tr>
+        </table>
+        
+        <table id="table4">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Text</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+
+
+        <button id ="createButton"> Create tweet</button>
+        <button id="get-button4"></button>
+    </form>
+
+    <hr>
+ <form id="create-form3">
+        <table style="margin-left:auto; margin-right:auto;">
+            <tr>
+                <td><label>Name</label></td>
+                <td><input class="form-control" type="text" name="nameEntry" id="nameEntry" required="true"/></td>
+                <td><label>New Screen Name</label></td>
+                <td><input class="form-control" type="text" name="usernameEntry" id="usernameEntry" required="true"/></td>
+
+            </tr>
+        </table>
+        
+        <button id ="updateButton"> Update Name</button>
+        <button background-color="#FFFFFF" id="get-button5"></button>
+    </form>
+
+    <hr>
+    <table id="table10" >
+        <th>Name</th>
+        <th>New Screen Name</th>
+    </table>
+    <script src="jquery.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>
