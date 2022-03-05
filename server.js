@@ -37,7 +37,9 @@ var tweets = [
     created_at: "Tue Mar 12 13:29:12 +0000 2013",
   },
 ];
-
+function test_print() {
+  console.log("test code");
+}
 var PORT = process.env.PORT || 3000;
 
 app.use(express.static(__dirname));
@@ -57,8 +59,8 @@ app.get("/tweets", function (req, res) {
 app.get("/tweets/:id", function (req, res) {
   var id = req.params.id;
   var found = false;
-  tweets.forEach(function (product, index) {
-    if (!found && Number(product.id) === Number(id)) {
+  tweets.forEach(function (item, index) {
+    if (!found && Number(item.id) === Number(id)) {
       res.send(tweets[index]);
     }
   });
@@ -94,9 +96,9 @@ app.put("/tweets/:createInput", function (req, res) {
 
   var found = false;
 
-  tweets.forEach(function (product, index) {
-    if (!found && String(product.name) === String(name)) {
-      product.screen_name = newName;
+  tweets.forEach(function (item, index) {
+    if (!found && String(item.name) === String(name)) {
+      item.screen_name = newName;
     }
   });
 
@@ -122,5 +124,6 @@ app.delete("/tweets/:id", function (req, res) {
 });
 
 app.listen(PORT, function () {
+  test_print();
   console.log("Listening on port " + PORT);
 });
