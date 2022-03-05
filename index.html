@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html>
+
+<script>
+    function test_print(){
+
+        console.log("test code")
+
+}</script>
 <head>
     
     <title>Assignment 1</title>
@@ -8,21 +15,33 @@
     <h1 text="center">HTTP Requests </h1>
     
 
-
-
+<!---ID Table-->
+<hr>
+    <button id="getIDbutton">Get IDs</button>
+    <table id="idTable"> 
+        <thead>
+            <tr>
+                <th>ID</th>
+                
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
    
+
+    <!---Search for tweet, by entering an ID-->
 <form>
     <table style="margin-left:auto; margin-right:auto;">
         <tr>
             <td><label>Tweet Search</label></td>
-            <td><input class="form-control" type="text" name="searchEntry" id="searchEntry" required="true"/></td>
+            <td><input class="form-control" type="text" name="searchEntry" id="searchEntry" required/></td>
         </tr>
     </table>
     
-    <button class="button" id="tweetbutton" required> Get Tweet</button>
+    <button class="button" id="getTweetbutton" required> Get Tweet</button>
 </form>
 
-
+<!---Display that tweet you searched-->
     <table id="specificTweetTable">
         <thead>
             <tr>
@@ -34,33 +53,13 @@
     </table>
     
 
-<hr>
-<form>
-    <table style="margin-left:auto; margin-right:auto;">
-        <tr>
-            <td><label>Tweet Delete</label></td>
-            <td><input class="form-control" type="text" name="deleteEntry" id="deleteEntry" required="true"/></td>
-        </tr>
-    </table>
+
+
     
-    <button id="deleteButton"> delete tweet</button>
-</form>
-
-    <hr>
-    <button id="get-button">Get IDs</button>
-    <table id="table2">
-        <thead>
-            <tr>
-                <th>ID</th>
-                
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
+<!--Table that displays the created time and text (displayTable)-->
     <hr>
     <form>
-    <table id="table3">
+    <table id="displayTable">
         <thead>
             <tr>
                 <th>Created At</th>
@@ -69,21 +68,22 @@
         </thead>
         <tbody></tbody>
     </table>
-    <button type="submit" id="get-button2" >Get Tweets</button>
+    <button type="submit" id="getDisplay" >Get Tweets</button>
 </form>
 <hr>
  <form id="create-form2">
         <table style="margin-left:auto; margin-right:auto;">
             <tr>
                 <td><label>User ID</label></td>
-                <td><input class="form-control" type="text" name="idEntry" id="idEntry" required="true"/></td>
+                <td><input class="form-control" type="text" name="idEntry" id="idEntry" required/></td>
                 <td><label>Text</label></td>
-                <td><input class="form-control" type="text" name="textEntry" id="textEntry" required="true"/></td>
+                <td><input class="form-control" type="text" name="textEntry" id="textEntry" required/></td>
 
             </tr>
         </table>
         
-        <table id="table4">
+        <!---Form to create new tweet and Table that displays the newly created tweets-->
+        <table id="createTable">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -98,14 +98,16 @@
         <button id="get-button4"></button>
     </form>
 
+
+    <!--Input fields to change screen name-->
     <hr>
  <form id="create-form3">
         <table style="margin-left:auto; margin-right:auto;">
             <tr>
                 <td><label>Name</label></td>
-                <td><input class="form-control" type="text" name="nameEntry" id="nameEntry" required="true"/></td>
+                <td><input class="form-control" type="text" name="nameEntry" id="nameEntry" required/></td>
                 <td><label>New Screen Name</label></td>
-                <td><input class="form-control" type="text" name="usernameEntry" id="usernameEntry" required="true"/></td>
+                <td><input class="form-control" type="text" name="usernameEntry" id="usernameEntry" required/></td>
 
             </tr>
         </table>
@@ -114,12 +116,25 @@
         <button background-color="#FFFFFF" id="get-button5"></button>
     </form>
 
-    <hr>
-    <table id="table10" >
+    
+    <!--Table that displays the names and new screen name-->
+    <table id="nameTable" >
         <th>Name</th>
         <th>New Screen Name</th>
     </table>
     <script src="jquery.js"></script>
     <script src="scripts.js"></script>
+    
+    <hr>
+<form>
+    <table style="margin-left:auto; margin-right:auto;">
+        <tr>
+            <td><label>Tweet Delete</label></td>
+            <td><input class="form-control" type="text" name="deleteEntry" id="deleteEntry" required/></td>
+        </tr>
+    </table>
+    
+    <button id="deleteButton"> delete tweet</button>
+</form>
 </body>
 </html>

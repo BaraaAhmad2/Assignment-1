@@ -5,23 +5,21 @@ $(function () {
   //tweets
 
   //This method gets the specified data within the tweets table (located in server.js)
-  $("#get-button").on("click", function () {
+  $("#getIDbutton").on("click", function () {
     $.ajax({
       url: "/tweets", //specify improtant parameters to send to server file
       contentType: "application/json",
       success: function (response) {
-        var tbodyEl = $("#table2 > tbody"); //this will fill up table2
+        var tbodyEl = $("#idTable > tbody"); //this will fill up table2
 
         tbodyEl.html("");
 
-        response.tweets.forEach(function (product) {
+        response.tweets.forEach(function (item) {
           tbodyEl.append(
-            '\
-                        <tr>\
-                            <td class="id">' +
-              product.id +
+            ' <tr> <td class="id">' +
+              item.id +
               "</td>\
-                            "
+                              "
           );
         });
       },
@@ -35,28 +33,28 @@ $(function () {
    * as well as the text itself
    * from values found within the "tweets" array
    */
-  $("#get-button2").on("click", function (event) {
+  $("#getDisplay").on("click", function (event) {
     event.preventDefault();
     $.ajax({
       url: "/tweets",
       contentType: "application/json",
       success: function (response) {
-        var tbodyEl = $("#table3 > tbody");
+        var tbodyEl = $("#displayTable > tbody");
 
         tbodyEl.html("");
 
-        response.tweets.forEach(function (product) {
+        response.tweets.forEach(function (item) {
           tbodyEl.append(
             '\
-                        <tr>\
-                            <td class="id">' +
-              product.created_at +
+                          <tr>\
+                              <td class="id">' +
+              item.created_at +
               '</td>\
-                            <td class="name">' +
-              product.text +
+                              <td class="name">' +
+              item.text +
               "</td>\
-                        </tr>\
-                    "
+                          </tr>\
+                      "
           );
         });
       },
@@ -71,7 +69,7 @@ $(function () {
    * Otherwise it will display nothing
    */
 
-  $("#tweetbutton").on("click", function (event) {
+  $("#getTweetbutton").on("click", function (event) {
     event.preventDefault();
     var id = $("#searchEntry").val();
 
@@ -84,20 +82,12 @@ $(function () {
         tbodyEl.html("");
 
         tbodyEl.append(
-          '\
-                        <tr>\
-                            <td class="id">' +
+          '  <tr> <td class="id">' +
             response.text +
-            '</td>\
-                            <td> class="name">' +
+            '</td>  <td class="name">' +
             response.created_at +
-            "</td>\
-                            <td>\
-                                \
-                                \
-                            </td>\
-                        </tr>\
-                    "
+            "</td>  <td> </td> </tr>\
+                      "
         );
       },
     });
@@ -120,9 +110,9 @@ $(function () {
       contentType: "application/json",
       success: function (response) {
         console.log("this button does something");
-        $("#get-button").click();
-        $("#get-button2").click();
-        $("#tweetButton").click();
+        $("#getIDbutton").click();
+        $("#getDisplay").click();
+        $("#getTweetButton").click();
         $("#createButton").click();
       },
     });
@@ -153,8 +143,8 @@ $(function () {
       success: function (response) {
         console.log(response);
         $("#get-button4").click();
-        $("#get-button").click();
-        $("#get-button2").click();
+        $("#getIDbutton").click();
+        $("#getDisplay").click();
       },
     });
   });
@@ -169,21 +159,18 @@ $(function () {
       url: "/tweets",
       contentType: "application/json",
       success: function (response) {
-        var tbodyEl = $("#table4 > tbody");
+        var tbodyEl = $("#createTable > tbody");
 
         tbodyEl.html("");
 
-        response.tweets.forEach(function (product) {
+        response.tweets.forEach(function (item) {
           tbodyEl.append(
-            '\
-                        <tr>\
-                            <td class="id">' +
-              product.id +
-              '</td>\
-                            <td class="name">' +
-              product.text +
+            ' <tr>  <td class="id">' +
+              item.id +
+              '</td><td class="name">' +
+              item.text +
               "</td>\
-          "
+            "
           );
         });
       },
@@ -230,26 +217,18 @@ $(function () {
       url: "/tweets",
       contentType: "application/json",
       success: function (response) {
-        var tbodyEl = $("#table10 > tbody");
+        var tbodyEl = $("#nameTable > tbody");
 
         tbodyEl.html("");
 
-        response.tweets.forEach(function (product) {
+        response.tweets.forEach(function (item) {
           tbodyEl.append(
-            '\
-                        <tr>\
-                            <td class="id">' +
-              product.name +
-              '</td>\
-                            <td class="name"> ' +
-              product.screen_name +
-              "</td>\
-                            <td>\
-                                \
-                                \
-                            </td>\
-                        </tr>\
-                    "
+            ' <tr> <td class="id">' +
+              item.name +
+              '</td> <td class="name"> ' +
+              item.screen_name +
+              "</td>     <td>  \
+   </td> </tr> "
           );
         });
       },

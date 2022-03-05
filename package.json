@@ -1,0 +1,15 @@
+{
+  "name": "assignment1cs3203",
+  "version": "1.0.0",
+  "description": "Assignment 1 for CS 3203",
+  "main": "jquery.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Baraa Ahmad",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3"
+  }
+}
